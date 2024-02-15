@@ -32,11 +32,15 @@ function Sweet(){
 
          }
             catch(error){
-                updateinput(error)
+                updateinput("Give valid input")
+                setTimeout(() => {
+                    updateinput("")
+                }, 1000);
             }
         }
 
-   
+    
+    
     function Clearinput(){
      updateinput("")
     }
@@ -55,9 +59,17 @@ function Sweet(){
 }
 
     function cal_power(){
+        
+        if(!isNaN(input)){
        const res=Math.sqrt(parseFloat(input))
        const res1=res.toString();
-       updateinput(res1)
+       updateinput(res1)}
+       else{
+        updateinput("Give valid input")
+        setTimeout(() => {
+            updateinput('')
+        }, 1000);
+       }
     }
     return(
         <div className='container'>
